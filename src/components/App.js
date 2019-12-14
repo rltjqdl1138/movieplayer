@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Home, Viewer} from '../pages'
+import { Home, Player} from '../pages'
 import { Menu, MyHeader, MyFooter } from './main'
 import '../css/desktop.css'
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
       <Menu />
       <Route exact path="/" component={Home}/>
-      <Route path="/viewer" component={Viewer}/>
+      <Route path="/player" component={Player}/>
     </div>
   );
 }

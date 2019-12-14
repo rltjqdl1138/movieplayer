@@ -1,2 +1,2 @@
 export { default as Home } from './Home';
-export { default as Viewer } from './Viewer';
+export { default as Player } from './Player';

@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux';
-import viewer from './viewer';
-import playlist from './playlist'
+import player from './player';
 
 export default combineReducers({
-    viewer,
-    playlist
+    player
 });
 

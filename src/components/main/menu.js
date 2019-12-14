@@ -12,7 +12,7 @@ const Menu = ()=>{
                         </Link>
                     </li>
                     <li className='main_menu_item'>
-                        <Link to="/viewer">
+                        <Link to="/player">
                             <img src="/api/image/movie" />
                         </Link>
                     </li>
