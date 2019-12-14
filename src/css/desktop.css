@@ -9,8 +9,20 @@
     visibility: visible;
 }
 @media (orientation: portrait){
-    .player_controlor{
-        font-size: 20rem;
+    .player_controlor button{
+        padding: 0.2rem;
+        font-size: 3rem;
+        margin: 1rem;
+        font-family: 'Sunflower', sans-serif;
+    }
+    .prev_button{
+        float: left;
+    }
+    .next_button{
+        float: right;
+    }
+    .player_controlor div{
+        clear: both;
     }
     .wrap_page{
         justify-content: center;
