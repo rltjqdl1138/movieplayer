@@ -278,7 +278,7 @@ const fs=require('fs')
 const url = require('url')
 
 const app = express();
-const port = 4000;
+const port = 3000;
 
 app.use('/', express.static(path.join(__dirname, './../public')));
 app.get('/api/image/*', (req,res)=>{
