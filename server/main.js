@@ -348,7 +348,7 @@ app.get('/api/movie/*', (req,res)=>{
 
 })
 app.get('/api/list/digimonadventure', (req, res) => {
-    console.log( 'on sign')
+    console.log( 'digimon adventure list')
     res.writeHead(200, {'Content-Type': 'application/json'})
     res.write(
         JSON.stringify({
@@ -359,6 +359,28 @@ app.get('/api/list/digimonadventure', (req, res) => {
     )
     res.end()
 });
+
+app.get('/api/list', (req, res)=>{
+    console.log('list')
+    res.writeHead(200, {'Content-Type': 'application/json'})
+    res.write(
+        JSON.stringify(
+            {
+                leng: 2,
+                movieList:[
+                    {
+                        movieID: "digimonadventure",
+                        movieName: "디지몬 어드벤처"   }
+                    ,{
+                        movieID: "pingu",
+                        movieName: "핑구"   }
+                    ]
+                
+            }
+        )
+    )
+    res.end()
+})
 
 app.listen(port, () => {
     console.log('Express is listening on port', port);

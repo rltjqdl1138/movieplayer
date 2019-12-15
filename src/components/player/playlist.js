@@ -44,6 +44,4 @@ const Playlist = ({videoID, videoList, changeVideo, updateList})=>{
         </div>
     )
 }
-    
-
 export default Playlist

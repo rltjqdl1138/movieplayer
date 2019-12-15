@@ -2,6 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 
 const initialState = {
+    movieID: "",
     movieUrl: "",
     movieName: "",
     videoList: [],
@@ -13,15 +14,23 @@ const initialState = {
 
 const CHANGE_CURRUNT = 'player/CHANGE_CURRUNT';
 const UPDATE_LIST = 'player/UPDATE_LIST';
+const ENTER_TO_MOVIE = 'player/ENTER_TO_MOVIE'
 //const NEXT_VIDEO = 'player/TO_NEXT_VIDEO'
 //const PREVIOUS_VIDEO = 'player/TO_PREVIOUS_VIDEO'
 
 export const changeCurrunt = createAction(CHANGE_CURRUNT, param=>param)
-export const updateList = createAction(UPDATE_LIST, data=>data);
+export const updateList = createAction(UPDATE_LIST, data=>data)
+export const enterToMovie = createAction(ENTER_TO_MOVIE, data=>data)
 //export const nextVideo = createAction(NEXT_VIDEO)
 //export const previousVideo = createAction(PREVIOUS_VIDEO)
 
 export default handleActions({
+    [ENTER_TO_MOVIE]: (state,{payload}) =>{
+        return {
+            ...state,
+            movieID: payload
+        }
+    },
     [CHANGE_CURRUNT]: (state, {payload}) =>{
         const nextID = payload
         if(!nextID || nextID==="" || nextID===0)
@@ -39,8 +48,9 @@ export default handleActions({
         }
     },
     [UPDATE_LIST]: (state, {payload})=>{
-        const {movieName, movieUrl, videoList} = payload
-        if(!movieName || movieName === "" || !movieUrl || movieUrl === "" || !videoList)
+        console.log(payload)
+        const { movieName, movieUrl, videoList} = payload
+        if( !movieName || movieName === "" || !movieUrl || movieUrl === "" || !videoList)
             return {
                 ...state
             }

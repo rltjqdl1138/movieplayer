@@ -10,9 +10,8 @@ class PlayerContainer extends Component{
     handleChangeVideo = (videoID) => {
         PlayerActions.changeCurrunt(videoID)
     }
-    handleUpdateList = () =>{
-        
-        const movieURL = '/api/list/digimonadventure'
+    handleUpdateList = (movieID) =>{
+        const movieURL = '/api/list/'+movieID
         axios.get(movieURL)
             .then((res)=>{
                 console.log('UPDATE: playlist')
@@ -22,12 +21,17 @@ class PlayerContainer extends Component{
                 console.error(err)
             )
     }
-        
+    
     render() {
+        console.log(this.props)
         const { handleChangeVideo, handleUpdateList } = this;
-        const { movieUrl, movieName, videoList, videoNumber, videoSpecial, videoTitle, videoID } = this.props;
-        
-        if(movieUrl===''){ handleUpdateList() }
+        const { movieID, movieUrl, movieName, videoList, videoNumber, videoSpecial, videoTitle, videoID } = this.props;
+        //const movieID = 'digimonadventure'
+        if(!movieID || movieID==="")
+            return(
+                <p>Not yet</p>
+            )
+        if(movieUrl===''){ handleUpdateList(movieID) }
         return (
             <section className="player_container">
                 
@@ -52,11 +56,12 @@ class PlayerContainer extends Component{
             </section>
 
         );
-      }
+    }
 }
 
 export default connect(
     ({ player }) => ({
+        movieID:     player.movieID,
         movieUrl:    player.movieUrl,
         movieName:   player.movieName,
         videoList:   player.videoList,

@@ -25,7 +25,6 @@ class VideoPlayer extends Component{
                     </video>
                 </div>
 
-
                 <div className="movie_information">
                     <div className="movie_class">
                         <h3 className="movie_name">{movieName}</h3>
