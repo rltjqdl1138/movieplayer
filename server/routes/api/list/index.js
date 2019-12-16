@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const digimonlist = require('./digimonadventure')
 const movielist = require('./movielist')
+const pingulist = require('./pingu')
 
 const path = require('path')
 const fs=require('fs')
@@ -20,7 +21,7 @@ router.get('/*',(req,res)=>{
     if(resourcePath === "digimonadventure")
         res.write(JSON.stringify(digimonlist))
     else if(resourcePath === "pingu")
-        res.write(JSON.stringify(digimonlist))
+        res.write(JSON.stringify(pingulist))
     else
         res.write(JSON.stringify({}))
     res.end()
