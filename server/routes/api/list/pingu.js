@@ -46,7 +46,7 @@ const tempList = [
     },{
         videoID: "012",
         videoNumber: 12,
-        videoTitle: "길 잃은 핑구"
+        videoTitle: "핑가가 없어졌어요"
     },{
         videoID: "013",
         videoNumber: 13,

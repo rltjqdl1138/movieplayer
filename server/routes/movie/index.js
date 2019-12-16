@@ -11,6 +11,7 @@ router.get('/*',(req,res)=>{
     const parsedUrl = url.parse(req.url)
     const resource = parsedUrl.pathname
     const resourcePath = __dirname+"/../../src/movie"+resource+".mp4"
+    console.log(resourcePath)
     var range = req.headers.range
     if(!range)
             return res.sendStatus(416)
