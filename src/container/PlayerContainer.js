@@ -29,7 +29,7 @@ class PlayerContainer extends Component{
         //const movieID = 'digimonadventure'
         if(!movieID || movieID==="")
             return(
-                <p>Not yet</p>
+                <p></p>
             )
         if(movieUrl===''){ handleUpdateList(movieID) }
         return (

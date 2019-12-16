@@ -8,12 +8,12 @@ const Menu = ()=>{
               <ul className='main_menu'>
                     <li className='main_menu_item'>
                         <Link to="/">
-                            <img src="/api/image/home" />
+                            <img src="/image/home" />
                         </Link>
                     </li>
                     <li className='main_menu_item'>
                         <Link to="/player">
-                            <img src="/api/image/movie" />
+                            <img src="/image/movie" />
                         </Link>
                     </li>
               </ul>

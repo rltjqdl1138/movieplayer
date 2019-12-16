@@ -222,8 +222,9 @@
         width: 100%;
         overflow: hidden;
     }
-    .medialist_container button{
-        width: 10rem;
+    .medialist_button{
+        width: 1.5rem;
+        font-size: 1.3rem;
     }
     .media_list{
         list-style: none;

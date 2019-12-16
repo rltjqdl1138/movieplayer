@@ -35,11 +35,11 @@ class MovielistContainer extends Component{
         }
         if(ifHidden == true)
             return (
-                <button onClick={this.handleToggleHidden}>보이기</button>
+                <button className="medialist_button" onClick={this.handleToggleHidden}>+</button>
             )
         return(
             <div className="medialist_container">
-            <button onClick={this.handleToggleHidden}>숨기기</button>
+            <button className="medialist_button" onClick={this.handleToggleHidden}>-</button>
                 <Medialist
                     movieList={movieList}
                     handleEntertoMovie={handleEntertoMovie}

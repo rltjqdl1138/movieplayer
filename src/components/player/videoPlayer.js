@@ -14,7 +14,7 @@ class VideoPlayer extends Component{
                 <h2>Not support</h2>
             )
 
-        this.VideoUrl= "/api/movie/" + movieUrl + "/" + videoID;
+        this.VideoUrl= "/movie/" + movieUrl + "/" + videoID;
         
         return (
             <article className="movie_container">
