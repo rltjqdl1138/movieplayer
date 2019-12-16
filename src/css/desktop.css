@@ -105,6 +105,42 @@
     .main_footer{
         margin: 5rem;
     }
+
+
+    .medialist_container{
+        border-bottom: solid 1px skyblue;
+        width: 100%;
+        overflow: hidden;
+    }
+    .medialist_button{
+        width: 3rem;
+        font-size: 3rem;
+        text-align: center;
+        margin: 2rem;
+    }
+    .media_list{
+        list-style: none;
+    }
+    .media_list_content{
+        width: 20rem;
+        height: 10rem;
+        float: left;
+        border-right: solid 1px lightgray;
+
+        font-family: 'Sunflower', sans-serif;
+        text-align: center;
+    }
+    .media_list_content p{
+        font-size: 2rem;
+    }
+    .media_list_padding{
+        clear: both;
+    }
+    .player_container{
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 @media (orientation:landscape){
