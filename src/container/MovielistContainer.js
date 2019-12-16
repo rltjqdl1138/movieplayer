@@ -5,8 +5,6 @@ import axios from 'axios'
 import { MovielistActions, PlayerActions } from '../store/actionCreators';
 import Medialist from '../components/player/medialist'
 
-import {Redirect} from 'react-router-dom';
-
 
 class MovielistContainer extends Component{
     handleUpdateList = () =>{
@@ -21,28 +19,33 @@ class MovielistContainer extends Component{
     }
     handleEntertoMovie = (movieID) =>{
         console.log(movieID)
-        PlayerActions.enterToMovie(movieID)
-        return (
-            <Redirect to="/movie" />
-        )
+        PlayerActions.changeMovieID(movieID)
+        MovielistActions.toggleHidden()
+    }
+    handleToggleHidden = ()=>{
+        MovielistActions.toggleHidden()
     }
 
     render() {
         const { handleUpdateList, handleEntertoMovie } = this;
-        const { leng, movieList } = this.props;
+        const { ifHidden, leng, movieList, curruntMovie } = this.props;
         if(!leng || leng==0 || !movieList || !movieList.length || movieList.length===0){
             handleUpdateList()
             return ( <h2 onClick={()=>{handleUpdateList()}}> 동영상 리스트 로딩 중... </h2> )
         }
-        
+        if(ifHidden == true)
+            return (
+                <button onClick={this.handleToggleHidden}>보이기</button>
+            )
         return(
-            <div>
+            <div className="medialist_container">
+            <button onClick={this.handleToggleHidden}>숨기기</button>
                 <Medialist
                     movieList={movieList}
                     handleEntertoMovie={handleEntertoMovie}
                 />
-            </div>
-        )
+            </div>)
+        
     }
 }
 
@@ -53,7 +56,9 @@ class MovielistContainer extends Component{
 
 export default connect(
     ({ movielist }) => ({
+        ifHidden: movielist.ifHidden,
         movieList:   movielist.movieList,
-        leng:   movielist.leng
+        leng:   movielist.leng,
+        curruntMovie:   movielist.curruntMovie
     })
 )(MovielistContainer);

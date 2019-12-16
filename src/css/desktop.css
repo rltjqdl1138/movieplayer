@@ -132,9 +132,6 @@
     .wrap_page{
         margin-left: 5rem;
         margin-right: 5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     .movie_container{
         float: left;
@@ -218,5 +215,34 @@
     }
     .main_footer{
         margin: 5rem;
+    }
+
+    .medialist_container{
+        border-bottom: solid 1px skyblue;
+        width: 100%;
+        overflow: hidden;
+    }
+    .medialist_container button{
+        width: 10rem;
+    }
+    .media_list{
+        list-style: none;
+    }
+    .media_list_content{
+        width: 10rem;
+        height: 5rem;
+        float: left;
+        border-right: solid 1px lightgray;
+
+        font-family: 'Sunflower', sans-serif;
+        text-align: center;
+    }
+    .media_list_padding{
+        clear: both;
+    }
+    .player_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

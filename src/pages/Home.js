@@ -4,7 +4,7 @@ import MovielistContainer from '../container/MovielistContainer'
 const Home = () => {
     return (
         <div>
-            <MovielistContainer />
+            Home
         </div>
     );
 };

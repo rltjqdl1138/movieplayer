@@ -3,11 +3,10 @@ import React from 'react'
 const MoviesItem = ({ id, name, onC }) =>{
 
     return (
-        <li className="play_list_content">
+        <li className="media_list_content">
             <div onClick={()=>{
                     onC(id);
                 }}>
-                <p className="list_movie_number">{id}</p>
                 <p className="list_movie_name">{name}</p>
             </div>
         </li>
@@ -29,9 +28,12 @@ const Medialist = ({movieList, handleEntertoMovie})=>{
     
     return(
         <div>
-            <ul className="play_list">
+            <ul className="media_list">
                 {MoviesItems}
             </ul>
+            <div className="media_list_padding">
+
+            </div>
         </div>
     )
 }

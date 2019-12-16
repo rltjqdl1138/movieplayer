@@ -14,19 +14,18 @@ const initialState = {
 
 const CHANGE_CURRUNT = 'player/CHANGE_CURRUNT';
 const UPDATE_LIST = 'player/UPDATE_LIST';
-const ENTER_TO_MOVIE = 'player/ENTER_TO_MOVIE'
+const CHANGE_MOVIEID = 'player/CHANGE_MOVIEID'
 //const NEXT_VIDEO = 'player/TO_NEXT_VIDEO'
 //const PREVIOUS_VIDEO = 'player/TO_PREVIOUS_VIDEO'
-
+export const changeMovieID = createAction(CHANGE_MOVIEID, data=>data)
 export const changeCurrunt = createAction(CHANGE_CURRUNT, param=>param)
 export const updateList = createAction(UPDATE_LIST, data=>data)
-export const enterToMovie = createAction(ENTER_TO_MOVIE, data=>data)
 //export const nextVideo = createAction(NEXT_VIDEO)
 //export const previousVideo = createAction(PREVIOUS_VIDEO)
 
 export default handleActions({
-    [ENTER_TO_MOVIE]: (state,{payload}) =>{
-        return {
+    [CHANGE_MOVIEID]: (state, {payload})=>{
+        return{
             ...state,
             movieID: payload
         }
@@ -48,7 +47,6 @@ export default handleActions({
         }
     },
     [UPDATE_LIST]: (state, {payload})=>{
-        console.log(payload)
         const { movieName, movieUrl, videoList} = payload
         if( !movieName || movieName === "" || !movieUrl || movieUrl === "" || !videoList)
             return {
