@@ -3,8 +3,6 @@ const digimonlist = require('./digimonadventure')
 const movielist = require('./movielist')
 const pingulist = require('./pingu')
 
-const path = require('path')
-const fs=require('fs')
 const url = require('url')
 
 router.get('/', (req,res)=>{

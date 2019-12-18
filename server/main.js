@@ -1,13 +1,6 @@
-
 const express = require('express')
-const path = require('path')
-const fs=require('fs')
-const url = require('url')
-
 const app = express();
 const port = 3000;
-
-
 
 app.use('/api', require('./routes/api'))
 app.use('/image', require('./routes/image'))
