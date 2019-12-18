@@ -56,7 +56,7 @@ export default handleActions({
             return {
                 ...state
             }
-        if( !state.videoID || state.videoID == ""){
+        if( !state.videoID || state.videoID === ""){
             return {
                 ...state,
                 movieName,

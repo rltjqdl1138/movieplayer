@@ -28,12 +28,12 @@ class MovielistContainer extends Component{
 
     render() {
         const { handleUpdateList, handleEntertoMovie } = this;
-        const { ifHidden, leng, movieList, curruntMovie } = this.props;
-        if(!leng || leng==0 || !movieList || !movieList.length || movieList.length===0){
+        const { ifHidden, leng, movieList} = this.props;
+        if(!leng || leng===0 || !movieList || !movieList.length || movieList.length===0){
             handleUpdateList()
             return ( <h2 onClick={()=>{handleUpdateList()}}> 동영상 리스트 로딩 중... </h2> )
         }
-        if(ifHidden == true)
+        if(ifHidden === true)
             return (
                 <button className="medialist_button" onClick={this.handleToggleHidden}>+</button>
             )
