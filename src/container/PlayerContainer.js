@@ -25,7 +25,7 @@ class PlayerContainer extends Component{
     render() {
         console.log(this.props)
         const { handleChangeVideo, handleUpdateList } = this;
-        const { movieID, movieUrl, movieName, videoList, videoNumber, videoSpecial, videoTitle, videoID } = this.props;
+        const { movieID, movieUrl, movieName, videoList, videoNumber, videoSpecial, videoTitle, videoID, videoURL } = this.props;
         //const movieID = 'digimonadventure'
         if(!movieID || movieID==="")
             return(
@@ -44,6 +44,7 @@ class PlayerContainer extends Component{
                         videoList = {videoList}
                         videoSpecial={videoSpecial}
                         handleChangeVideo={handleChangeVideo}
+                        videoURL = {videoURL}
                 />
                 <aside className="play_list_container">
                     <Playlist

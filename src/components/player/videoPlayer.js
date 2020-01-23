@@ -7,15 +7,15 @@ class VideoPlayer extends Component{
     }
     render(){
 
-        const {movieUrl, videoList, movieName, videoNumber, videoTitle, videoID, videoSpecial, handleChangeVideo} = this.props
+        const {videoURL, movieUrl, videoList, movieName, videoNumber, videoTitle, videoID, videoSpecial, handleChangeVideo} = this.props
         
         if(!videoID || videoID === "")
             return(
                 <h2>Not support</h2>
             )
 
-        this.VideoUrl= "/movie/" + movieUrl + "/" + videoID;
-        
+        this.VideoUrl= "/movie/" + movieUrl + "/" + videoURL;
+        console.log(this.VideoUrl)
         return (
             <article className="movie_container">
                 <div className="video_container">
