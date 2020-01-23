@@ -68,6 +68,7 @@ export default connect(
         videoNumber: player.videoNumber,
         videoSpecial:player.videoSpecial,
         videoTitle:  player.videoTitle,
-        videoID:     player.videoID
+        videoID:     player.videoID,
+        videoURL:    player.videoURL
     })
 )(PlayerContainer);

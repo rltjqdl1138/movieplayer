@@ -10,6 +10,7 @@ const initialState = {
     videoSpecial: "",
     videoTitle: "",
     videoID: "",
+    videoURL: "",
 }
 
 const CHANGE_CURRUNT = 'player/CHANGE_CURRUNT';
@@ -67,7 +68,8 @@ export default handleActions({
                 videoNumber: videoList[0].videoNumber,
                 videoSpecial: videoList[0].videoSpecial,
                 videoTitle: videoList[0].videoTitle,
-                videoID: videoList[0].videoID
+                videoID: videoList[0].videoID,
+                videoURL: videoList[0].videoURL
             }
         }
         else

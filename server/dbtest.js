@@ -11,6 +11,7 @@ var connection = mysql.createConnection({
     
 connection.connect();
 
+/*
 
 movielist.map((value)=>{
     var tmp = "INSERT INTO movie (movieURL, movieName) VALUES ('"+value.movieID+"','"+value.movieName+"');"
@@ -22,11 +23,16 @@ movielist.map((value)=>{
     });
     console.log(tmp)
 })
+*/
 
-const tempList = di
-/*
+const tempList = pi
+
 tempList.map((value)=>{
-    var tmp = "INSERT INTO video (videoNumber, videoTitle, movieID) VALUES ('"+value.videoNumber+"','"+value.videoTitle+"', 3);"
+    var tmp = "INSERT INTO video (videoURL, videoNumber, videoTitle, movieID) VALUES ('"
+    + value.videoID +   "','"
+    + value.videoNumber+ "','"
+    + value.videoTitle+ "',"
+    + "2);"
     
     connection.query(tmp, function (error, results, fields) {
         if (error) {
@@ -36,6 +42,6 @@ tempList.map((value)=>{
     });
     console.log(tmp)
 })
-*/
+
     
   connection.end();
