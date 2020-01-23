@@ -35,13 +35,14 @@ export default handleActions({
         const nextID = payload
         if(!nextID || nextID==="" || nextID===0)
             return {...state}    
-        const {videoNumber, videoSpecial, videoTitle} = state.videoList.find(({ videoID }) => nextID === videoID )
+        const {videoNumber, videoSpecial, videoTitle, videoURL} = state.videoList.find(({ videoID }) => nextID === videoID )
         if( !videoNumber || !videoTitle )
             return {...state}
         
         return {
             ...state,
             videoID: nextID,
+            videoURL,
             videoNumber,
             videoSpecial,
             videoTitle
