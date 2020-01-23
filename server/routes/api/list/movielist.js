@@ -1,6 +1,5 @@
-const tempList ={
-    leng: 2,
-    movieList:[
+
+const movieList=[
         {
             movieID: "digimonadventure",
             movieName: "디지몬 어드벤처"   }
@@ -8,6 +7,4 @@ const tempList ={
             movieID: "pingu",
             movieName: "핑구"   }
         ]
-    
-}
-module.exports = tempList
+module.exports = movieList

@@ -521,10 +521,5 @@ const tempList = [
         videoTitle: "핑구와 스노우볼"
     }
 ]
-const list = {
-    movieUrl: 'pingu',
-    movieName: '핑구',
-    videoList: tempList
-}
 
-module.exports = list
+module.exports = tempList

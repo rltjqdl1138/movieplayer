@@ -47,6 +47,7 @@ export default handleActions({
         }
     },
     [UPDATE_LIST]: (state, {payload})=>{
+        console.log(payload)
         const { movieName, movieUrl, videoList} = payload
         if( !movieName || movieName === "" || !movieUrl || movieUrl === "" || !videoList)
             return {

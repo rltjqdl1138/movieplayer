@@ -16,7 +16,9 @@ export const toggleHidden = createAction(TOGGLE_HIDDEN)
 
 export default handleActions({
     [UPDATE_LIST]: (state, {payload})=>{
-        const {movieList, leng} = payload
+        console.log(payload)
+        const movieList = payload
+        const leng = payload.length
         if(!leng || leng===0 || !movieList || !movieList.length || movieList.length===0)
             return{
                 ...state

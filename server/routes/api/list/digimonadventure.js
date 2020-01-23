@@ -272,9 +272,4 @@ const tempList =  [
         videoTitle: "새로운 세계"
     }
 ]
-const list = {
-    movieUrl: 'digimon/adventure',
-    movieName: '디지몬 어드벤처',
-    videoList: tempList
-}
-module.exports = list;
+module.exports = tempList;

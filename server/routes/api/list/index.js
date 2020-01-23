@@ -1,9 +1,22 @@
 const router = require('express').Router()
-const digimonlist = require('./digimonadventure')
-const movielist = require('./movielist')
-const pingulist = require('./pingu')
-
 const url = require('url')
+const mysql = require('mysql')
+const connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : '1138877',
+  database : 'myMoviePlayer'
+});
+var movielist
+
+connection.connect();
+  
+connection.query('SELECT * FROM movie', (error, results)=>{
+    if (error) {
+        console.log(error);
+    }
+    movielist = results
+});
 
 router.get('/', (req,res)=>{
     res.writeHead(200, {'Content-Type': 'application/json'})
@@ -11,18 +24,29 @@ router.get('/', (req,res)=>{
     res.end()
 })
 router.get('/*',(req,res)=>{
+    console.log(movielist)
     const parsedUrl = url.parse(req.url)
     const resource = parsedUrl.pathname
     const resourcePath = resource.substring(1,resource.length)
     res.writeHead(200, {'Content-Type': 'application/json'})
+    const result = movielist.find( ({ movieID }) => movieID === Number(resourcePath) );
+    connection.query("SELECT * FROM video where movieID ='"+resourcePath+"';", (error, results)=>{
+        if (error) {
+            res.write(JSON.stringify({}))
+            console.log(error);
 
-    if(resourcePath === "digimonadventure")
-        res.write(JSON.stringify(digimonlist))
-    else if(resourcePath === "pingu")
-        res.write(JSON.stringify(pingulist))
-    else
-        res.write(JSON.stringify({}))
-    res.end()
+            res.end()
+        }else{
+            var movie = {
+                movieName: result.movieName,
+                movieUrl: result.movieURL,
+                videoList:results
+            }
+            res.write(JSON.stringify(movie))
+
+            res.end()
+        }
+    });
 
 })
 module.exports = router
