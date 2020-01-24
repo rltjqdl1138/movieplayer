@@ -34,7 +34,6 @@ router.get('/*',(req,res)=>{
         if (error) {
             res.write(JSON.stringify({}))
             console.log(error);
-
             res.end()
         }else{
             var movie = {
